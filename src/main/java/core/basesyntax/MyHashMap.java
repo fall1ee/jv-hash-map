@@ -5,7 +5,7 @@ import java.util.Objects;
 public class MyHashMap<K, V> implements MyMap<K, V> {
 
     private static final int CAPACITY = 16;
-    private static final double LOAD_FACTORY = 0.75;
+    private static final double LOAD_FACTOR = 0.75;
     private int size = 0;
     private Node<K,V>[] table;
 
@@ -43,7 +43,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                 }
             }
         }
-        if ((double)size / (double)table.length >= LOAD_FACTORY) {
+        if ((double)size / (double)table.length >= LOAD_FACTOR) {
             resize();
         }
     }
